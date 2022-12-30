@@ -9,7 +9,7 @@
 
                 <div class="card-body">
 
-
+<<<<<<< Updated upstream
               <ul class="list-group">
                   @foreach($employees as $employee)
                 <li class="list-group-item">{{$employee->name}}</li>
@@ -29,4 +29,4 @@
   <!-- <ul class="list-group"> -->
 
 </html>
-
+>>>>>>> Stashed changes
