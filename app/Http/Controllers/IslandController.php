@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Island;
+use App\Models\Employee;
 use Illuminate\Http\Request;
+use App\Models\Island;
 
 class IslandController extends Controller
 {
@@ -14,7 +15,14 @@ class IslandController extends Controller
      */
     public function index()
     {
-        //
+        
+        $islands = Island::all();
+        //dd($employees);
+
+        // Pass data to view
+        return view('islands.index', ['islands' => $islands]);
+
+        //return 'welcome'; //view('employees.index');
     }
 
     /**
@@ -24,7 +32,7 @@ class IslandController extends Controller
      */
     public function create()
     {
-        //
+        return view('islands.create');
     }
 
     /**
@@ -41,10 +49,10 @@ class IslandController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Island  $island
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(Island $island)
+    public function show(Employee $employee)
     {
         //
     }
@@ -52,10 +60,10 @@ class IslandController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Island  $island
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(Island $island)
+    public function edit(Employee $employee)
     {
         //
     }
@@ -64,10 +72,10 @@ class IslandController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Island  $island
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Island $island)
+    public function update(Request $request, Employee $employee)
     {
         //
     }
@@ -75,10 +83,10 @@ class IslandController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Island  $island
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Island $island)
+    public function destroy(Employee $employee)
     {
         //
     }

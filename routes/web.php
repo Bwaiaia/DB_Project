@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\IslandController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,20 @@ Route::group(['middleware' => 'auth'], function ()
         Route::get('edit', [EmployeeController::class, 'edit'])->name('edit');
         Route::match(['PUT', 'PATCH'], '', [EmployeeController::class, 'update'])->name('update');
         Route::delete('', [EmployeeController::class, 'delete'])->name('delete');
+        });
+    });
+
+     //island
+     Route::group(['as' => 'island.', 'prefix' => 'island'], function () {
+        Route::get('', [IslandController::class, 'index'])->name('index');
+        Route::get('create', [IslandController::class, 'create'])->name('create');
+        Route::post('', [IslandController::class, 'store'])->name('store');
+        Route::get('export', [IslandController::class, 'exportlist'])->name('export');
+        Route::group(['prefix' => '{kiisland?}'], function () { 
+        Route::get('', [IslandController::class, 'show'])->name('show');
+        Route::get('edit', [IslandController::class, 'edit'])->name('edit');
+        Route::match(['PUT', 'PATCH'], '', [IslandController::class, 'update'])->name('update');
+        Route::delete('', [IslandController::class, 'delete'])->name('delete');
         });
     });
 
