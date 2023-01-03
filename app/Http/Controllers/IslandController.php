@@ -43,7 +43,12 @@ class IslandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $input = $request->all();
+        
+            $results = Island::create($input);
+
+
+        return redirect()->route('island.index')->with('exception', 'Operation failed !');
     }
 
     /**

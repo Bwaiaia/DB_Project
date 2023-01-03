@@ -16,7 +16,6 @@ class CreateIslandsTable extends Migration
         Schema::create('islands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('discription');
             $table->timestamps();
         });
     }

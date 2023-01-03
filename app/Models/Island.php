@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Island extends Model
 {
     use HasFactory;
+
+    
+    protected $table = 'islands';
+    protected $fillable = ['name'];
 }
