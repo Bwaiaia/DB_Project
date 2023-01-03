@@ -64,7 +64,7 @@ class EmployeeController extends Controller {
 	
 		$employee = Employee::find($id);
 
-		return view('pdd.employee.show')
+		return view('employees.show')
 	        ->with('employee',$employee);
 
 	}
@@ -80,7 +80,7 @@ class EmployeeController extends Controller {
 	public function edit($id) {
 		
 
-		return view('employee.edit');
+		return view('employees.edit');
 	}
 
 	/**
