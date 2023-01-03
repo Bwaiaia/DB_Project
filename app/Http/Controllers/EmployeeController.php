@@ -79,8 +79,9 @@ class EmployeeController extends Controller {
 	 */
 	public function edit($id) {
 		
-
-		return view('employees.edit');
+        $employee = Employee::find($id)->toArray();
+		return view('employees.edit')->withEmployee($employee);
+        
 	}
 
 	/**

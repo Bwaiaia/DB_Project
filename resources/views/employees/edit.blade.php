@@ -25,12 +25,12 @@
                                 </div>
                             </div>
                             <div class="box-body">
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('employee.update',$employee['id']) }}" method="post" enctype="multipart/form-data">
                             @csrf
 
 
-                        <input type="hidden" name="_method" value="PATCH">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">                              
+                                <input type="hidden" name="_method" value="PATCH">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">                              
                                        
                                           <div class="box-body">
                                           <h4 class="box-title text-info"> SECTION A</h4>
@@ -40,7 +40,7 @@
                                                    <div class="form-group col-md-6">
                                                       <label for="name"><span class="text-danger">*</span> FULL NAME</label>
                                                    
-                                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"  value="" id="name" placeholder="Enter a Full name" name="name" autocomplete="off">
+                                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"  value="{{$employee['name']}}" id="name" placeholder="Enter a Full name" name="name" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -51,7 +51,7 @@
                                                    <div class="form-group col-md-6">
                                                       <label for="age"><span class="text-danger">*</span> Age</label>
                                                      
-                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="" id="age" placeholder="Enter age" name="age" autocomplete="off">
+                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{$employee['age']}}" id="age" placeholder="Enter age" name="age" autocomplete="off">
                                                             @if ($errors->has('receive_date'))
                                                                <span class="invalid-feedback" role="alert">
                                                                <strong>{{ $errors->first('age') }}</strong>
@@ -69,7 +69,7 @@
                                                    <div class="form-group col-md-6">
                                                       <label for="island"><span class="text-danger">*</span> Island Name</label>
                                                    
-                                                            <input type="text" class="form-control {{ $errors->has('island') ? ' is-invalid' : '' }}" value="" id="island" placeholder="Enter a Emergency Contact" name="island" autocomplete="off">
+                                                            <input type="text" class="form-control {{ $errors->has('island') ? ' is-invalid' : '' }}" value="{{$employee['island']}}" id="island" placeholder="Enter a Emergency Contact" name="island" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
