@@ -17,7 +17,7 @@
                 <div class="col-lg-7">
                     <div class="mb-4">
                     <form method="post">
-                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('village.edit',$island)}}">Edit Village Profile</a>
+                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('village.edit',$village)}}">Edit Village Profile</a>
                     <h3>Village-Info</h3>
                     </form>
                     </div>
@@ -33,7 +33,7 @@
                                                 <label>Village ID:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$villages['id']}}</p>
+                                                <p>{{$village['id']}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -41,7 +41,7 @@
                                                 <label>Village Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$villages['name']}}</p>
+                                                <p>{{$village['name']}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -49,7 +49,7 @@
                                                 <label>Description:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$villages['description']}}</p>
+                                                <p>{{$village['description']}}</p>
                                             </div>
                                         </div>
                                  
