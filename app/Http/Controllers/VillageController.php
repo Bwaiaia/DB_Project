@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
-use Illuminate\Http\Request;
-use App\Models\Island;
+//use App\Models\Island;
 use App\Models\Village;
+use Illuminate\Http\Request;
 
 class VillageController extends Controller
 {
@@ -55,7 +55,7 @@ class VillageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\Village  $village
      * @return \Illuminate\Http\Response
      */
     public function show($id)

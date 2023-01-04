@@ -13,6 +13,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/home') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/island') }}">Island List</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/village') }}">Village List</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Employee List</li>
             </ol>
         </nav>
