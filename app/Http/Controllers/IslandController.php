@@ -59,7 +59,10 @@ class IslandController extends Controller
      */
     public function show($id)
     {
-        //
+        $island = Island::find($id);
+
+		return view('islands.show')
+	        ->with('island',$island);
     }
 
     /**
