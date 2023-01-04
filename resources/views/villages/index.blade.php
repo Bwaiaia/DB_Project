@@ -28,7 +28,7 @@
 
                 <div class="box-header with-border">
                         <div class="alert alert-info clearfix">
-                            <a href="{{ route('island.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add Village') }}</button></a> 
+                            <a href="{{ route('village.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add Village') }}</button></a> 
                         </div>
                      </div>
             </div>
