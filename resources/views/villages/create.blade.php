@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <div class="box-body">
-                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('village.store') }}" >
+                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('villages.store') }}" >
                                                                     @csrf
                                        
                                           <div class="box-body">
@@ -33,7 +33,7 @@
                                                 <hr class="my-15">
                                                 <div class="row">
                                                
-                                                   <div class="form-group col-md-6">
+                                                   <div class="form-group col-md-12">
                                                       <label for="name"><span class="text-danger">*</span>Village Name</label>
                                                    
                                                             <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" id="name" placeholder="................" name="name" autocomplete="off">
@@ -44,17 +44,18 @@
                                                          @endif
                                                    
                                                    </div>
-                                                   <div class="form-group col-md-6">
-                                                      <label for="age"><span class="text-danger">*</span>Description</label>
-                                                     
-                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{ old('Description') }}" id="Description" placeholder="..............." name="Description" autocomplete="off">
-                                                            @if ($errors->has('receive_date'))
-                                                               <span class="invalid-feedback" role="alert">
-                                                               <strong>{{ $errors->first('age') }}</strong>
-                                                            </span>
-                                                            @endif
+                                                   <div class="form-group col-md-12">
+                                                      <label for="name"><span class="text-danger">*</span>Description</label>
+                                                   
+                                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" id="name" placeholder="................" name="name" autocomplete="off">
+                                                           @if(session()->has('error'))
+                                                            <div class="alert alert-danger">
+                                                               {{ session()->get('error') }}
+                                                            </div>
+                                                         @endif
                                                    
                                                    </div>
+                                                   
                                                 </div>   
                                                   
                                                    

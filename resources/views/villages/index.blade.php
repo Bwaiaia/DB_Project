@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('Island'))
+@section('title', __('Village'))
 
 @section('content')
 <div class="container">
@@ -7,7 +7,7 @@
 
     <section class="content-header">
         <h1>
-            {{ __('Island') }}
+            {{ __('Village') }}
         </h1>
          <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -28,7 +28,7 @@
 
                 <div class="box-header with-border">
                         <div class="alert alert-info clearfix">
-                            <a href="{{ route('island.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add Village') }}</button></a> 
+                            <a href="{{ route('village.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add Village') }}</button></a> 
                         </div>
                      </div>
             </div>
@@ -68,18 +68,18 @@
                         </tr>
                     </thead>
                     <tbody id="myTable">
-                        @php $sl = 1; @endphp
+                        @php $vl = 1; @endphp
                       
-                        @foreach($villages as $village)
+                        @foreach($village as $village)
                         <tr>
-                            <td>{{ $sl++ }}</td>
+                            <td>{{ $vl++ }}</td>
                      
                             
-                            <td>{{ $village['name'] }}</td>
-                            <td>{{$village['Description']}}</td>
+                            <td>{{ $villages['name'] }}</td>
+                            <td>{{$village['description']}}</td>
                             
                         
-                            <td class="text-center">{{ date("d F Y", strtotime($village['created_at'])) }}</td>
+                            <td class="text-center">{{ date("d F Y", strtotime($villages['created_at'])) }}</td>
                            
                            
                             <td class="text-center">

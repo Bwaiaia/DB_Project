@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IslandController;
+use App\Http\Controllers\VillageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +53,20 @@ Route::group(['middleware' => 'auth'], function ()
         Route::get('edit', [IslandController::class, 'edit'])->name('edit');
         Route::match(['PUT', 'PATCH'], '', [IslandController::class, 'update'])->name('update');
         Route::delete('', [IslandController::class, 'delete'])->name('delete');
+        });
+    });
+
+    //island
+    Route::group(['as' => 'village.', 'prefix' => 'village'], function () {
+        Route::get('', [VillageController::class, 'index'])->name('index');
+        Route::get('create', [VillageController::class, 'create'])->name('create');
+        Route::post('', [VillageController::class, 'store'])->name('store');
+        Route::get('export', [VillageController::class, 'exportlist'])->name('export');
+        Route::group(['prefix' => '{kivillage}'], function () { 
+        Route::get('', [VillageController::class, 'show'])->name('show');
+        Route::get('edit', [VillageController::class, 'edit'])->name('edit');
+        Route::match(['PUT', 'PATCH'], '', [VillageController::class, 'update'])->name('update');
+        Route::delete('', [VillageController::class, 'delete'])->name('delete');
         });
     });
 
