@@ -51,7 +51,7 @@
                                                    <div class="form-group col-md-6">
                                                       <label for="age"><span class="text-danger">*</span> Description</label>
                                                      
-                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{$village['description']}}" id="age" placeholder=".................." name="Description" autocomplete="off">
+                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{$village['description']}}" id="age" placeholder=".................." name="description" autocomplete="off">
                                                             @if ($errors->has('receive_date'))
                                                                <span class="invalid-feedback" role="alert">
                                                                <strong>{{ $errors->first('age') }}</strong>
