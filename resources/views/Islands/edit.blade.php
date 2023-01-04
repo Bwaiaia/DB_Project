@@ -17,7 +17,7 @@
                         <!-- Default box -->
                         <div class="box">
                             <div class="box-header with-border">
-                                <h3 class="box-title">{{ __('ENTER ISLANDS DETAILS') }}</h3>
+                                <h3 class="box-title">{{ __('EDIT ISLANDS DETAILS') }}</h3>
 
                                 <div class="box-tools pull-right">
                                     <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
@@ -25,18 +25,22 @@
                                 </div>
                             </div>
                             <div class="box-body">
-                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('island.store') }}" >
-                                                                    @csrf
+                            <form action="" method="post" enctype="multipart/form-data">
+                            @csrf
+
+
+                                <input type="hidden" name="_method" value="PATCH">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">                              
                                        
-                                          <div class="box-body">
-                                          <h4 class="box-title text-info"> SECTION A</h4>
+                                           <!-- new input -->
+                                           <h4 class="box-title text-info"> ISLANDS EDITION:</h4>
                                                 <hr class="my-15">
                                                 <div class="row">
                                                
                                                    <div class="form-group col-md-6">
-                                                      <label for="name"><span class="text-danger">*</span>Island Name</label>
+                                                      <label for="island"><span class="text-danger">*</span> Island Name</label>
                                                    
-                                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" id="name" placeholder="Enter a Island Name:" name="name" autocomplete="off">
+                                                            <input type="text" class="form-control {{ $errors->has('island') ? ' is-invalid' : '' }}" value="{{$island['name']}}" id="island" placeholder="Enter a Emergency Contact" name="island" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -44,14 +48,14 @@
                                                          @endif
                                                    
                                                    </div>
-                                                  
                                                    
-                                               
-
+                                                   
+                                                </div>
+                                                
                                           <!-- /.box-body -->
                                           <div class="box-footer text-right">
                                                 <button type="submit" class="btn btn-primary btn-outline">
-                                                   <i class="ti-save-alt"></i> Save
+                                                   <i class="ti-save-alt"></i> Update
                                                 </button>
                                                 <a class="btn btn-warning btn-outline mr-1" href="">
                                                    <i class="ti-trash"></i> Cancel

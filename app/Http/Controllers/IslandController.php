@@ -68,9 +68,10 @@ class IslandController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(Employee $employee)
+    public function edit(island $island)
     {
-        //
+        $island = island::find($island->id);
+		return view('islands.edit')->withIsland($island);
     }
 
     /**
