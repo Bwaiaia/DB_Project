@@ -57,7 +57,7 @@ class IslandController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(Employee $employee)
+    public function show($id)
     {
         //
     }
@@ -68,9 +68,9 @@ class IslandController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(island $island)
+    public function edit($id)
     {
-        $island = island::find($island->id);
+        $island = island::find($id);
 		return view('islands.edit')->withIsland($island);
     }
 
@@ -81,9 +81,14 @@ class IslandController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Employee $employee)
+    public function update(Request $request, $id)
     {
-        //
+        // $island = $request->all();
+     
+        $data = Island::find($id)->update($request->all());
+
+
+           return redirect()->route('island.index')->with('message', 'Updated successfully.');
     }
 
     /**
