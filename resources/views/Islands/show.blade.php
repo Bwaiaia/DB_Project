@@ -18,7 +18,7 @@
                     <div class="mb-4">
                     <form method="post">
                     <a  class="d-inline-block text-primary text-uppercase " href="{{route('island.edit',$island)}}">Edit Island Profile</a>
-                        <h1>{{$island['name']}}</h1>
+                    <h3>Island-Info</h3>
                     </form>
                     </div>
                     <div>
@@ -30,7 +30,7 @@
                                      
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Island ID</label>
+                                                <label>Island ID:</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{$island['id']}}</p>
@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Island</label>
+                                                <label>Island Name:</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{$island['name']}}</p>
