@@ -49,7 +49,7 @@ class VillageController extends Controller
             $results = Village::create($input);
 
 
-        return redirect()->route('villages.index');
+        return redirect()->route('village.index');
     }
 
     /**

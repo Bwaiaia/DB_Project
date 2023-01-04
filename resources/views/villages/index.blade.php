@@ -13,7 +13,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/home') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/employee') }}">Employee List</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/island') }}">Island List</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/island') }}">Island List</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Village List</li>
             </ol>
         </nav>
@@ -70,16 +70,16 @@
                     <tbody id="myTable">
                         @php $vl = 1; @endphp
                       
-                        @foreach($village as $village)
+                        @foreach($villages as $village)
                         <tr>
                             <td>{{ $vl++ }}</td>
                      
                             
-                            <td>{{ $villages['name'] }}</td>
+                            <td>{{ $village['name'] }}</td>
                             <td>{{$village['description']}}</td>
                             
                         
-                            <td class="text-center">{{ date("d F Y", strtotime($villages['created_at'])) }}</td>
+                            <td class="text-center">{{ date("d F Y", strtotime($village['created_at'])) }}</td>
                            
                            
                             <td class="text-center">
