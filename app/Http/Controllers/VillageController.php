@@ -49,7 +49,7 @@ class VillageController extends Controller
             $results = Village::create($input);
 
 
-        return redirect()->route('village.index')->with('exception', 'Operation failed !');
+        return redirect()->route('villages.index');
     }
 
     /**
@@ -62,8 +62,7 @@ class VillageController extends Controller
     {
         $village = Village::find($id);
 
-		return view('villages.show')
-	        ->with('village',$village);
+		return view('villages.show')->withVillage($village);
     }
 
     /**

@@ -33,7 +33,7 @@
                                                 <label>Village ID:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$village['id']}}</p>
+                                                <p>{{$villages['id']}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -41,7 +41,7 @@
                                                 <label>Village Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$village['name']}}</p>
+                                                <p>{{$villages['name']}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -49,7 +49,7 @@
                                                 <label>Description:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$village['Description']}}</p>
+                                                <p>{{$villages['description']}}</p>
                                             </div>
                                         </div>
                                  

@@ -56,13 +56,21 @@ Route::group(['middleware' => 'auth'], function ()
         });
     });
 
+<<<<<<< HEAD
     //village
+=======
+    //island
+>>>>>>> 45c06c87a7a70cbbfeb4f1c650d8601d5b263d65
     Route::group(['as' => 'village.', 'prefix' => 'village'], function () {
         Route::get('', [VillageController::class, 'index'])->name('index');
         Route::get('create', [VillageController::class, 'create'])->name('create');
         Route::post('', [VillageController::class, 'store'])->name('store');
         Route::get('export', [VillageController::class, 'exportlist'])->name('export');
+<<<<<<< HEAD
         Route::group(['prefix' => '{village}'], function () { 
+=======
+        Route::group(['prefix' => '{kivillage}'], function () { 
+>>>>>>> 45c06c87a7a70cbbfeb4f1c650d8601d5b263d65
         Route::get('', [VillageController::class, 'show'])->name('show');
         Route::get('edit', [VillageController::class, 'edit'])->name('edit');
         Route::match(['PUT', 'PATCH'], '', [VillageController::class, 'update'])->name('update');
@@ -70,7 +78,10 @@ Route::group(['middleware' => 'auth'], function ()
         });
     });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 45c06c87a7a70cbbfeb4f1c650d8601d5b263d65
    
 
 });
