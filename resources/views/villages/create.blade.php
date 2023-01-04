@@ -33,13 +33,8 @@
                                                 <hr class="my-15">
                                                 <div class="row">
                                                
-<<<<<<< HEAD
                                                    <div class="form-group col-md-6">
                                                       <label for="name"><span class="text-danger">*</span> VILLAGE NAME</label>
-=======
-                                                   <div class="form-group col-md-12">
-                                                      <label for="name"><span class="text-danger">*</span>Village Name</label>
->>>>>>> 45c06c87a7a70cbbfeb4f1c650d8601d5b263d65
                                                    
                                                             <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" id="name" placeholder="Enter a village name" name="name" autocomplete="off">
                                                            @if(session()->has('error'))
@@ -49,7 +44,6 @@
                                                          @endif
                                                    
                                                    </div>
-<<<<<<< HEAD
                                                    <div class="form-group col-md-6">
                                                       <label for="description"><span class="text-danger">*</span> DESCRIPTION</label>
                                                      
@@ -61,22 +55,6 @@
                                                             @endif
                                                    
                                                    </div>
-=======
-                                                   <div class="form-group col-md-12">
-                                                      <label for="name"><span class="text-danger">*</span>Description</label>
-                                                   
-                                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" id="name" placeholder="................" name="name" autocomplete="off">
-                                                           @if(session()->has('error'))
-                                                            <div class="alert alert-danger">
-                                                               {{ session()->get('error') }}
-                                                            </div>
-                                                         @endif
-                                                   
-                                                   </div>
-                                                   
-                                                </div>   
-                                                  
->>>>>>> 45c06c87a7a70cbbfeb4f1c650d8601d5b263d65
                                                    
                                                 </div>
                                                 <!-- new input -->
