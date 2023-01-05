@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTraining_TypesTable extends Migration
+class Create_Training_Types_Table extends Migration
 {
 
     public function up()
