@@ -18,6 +18,7 @@
                     <div class="mb-4">
                     <form method="post">
                     <a  class="d-inline-block text-primary text-uppercase " href="{{route('village.edit',$village['id'])}}">Edit Village Profile</a>
+                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('village.edit',$village)}}">Edit Village Profile</a>
                     <h3>Village-Info</h3>
                     </form>
                     </div>
