@@ -6,11 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Console\Helper\Table;
 
-class Training_Types extends Model
+class TrainingType extends Model
 {
     use HasFactory;
 
     protected $table = 'training_types';
+    protected $fillable = ['training_name', 'training_description'];
 
-    protected $fillable = ['id', 'training_name', 'training_description'];
+    public function trainings(){
+
+        return $this->hasMany(Training::class);
+    }
+
+
 }
