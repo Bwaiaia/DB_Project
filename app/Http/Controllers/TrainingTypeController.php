@@ -17,12 +17,12 @@ class TrainingTypeController extends Controller
     {
         
         $trainingTypes = TrainingType::all();
-        //dd($employees);
+        
 
         // Pass data to view
-        return view('trainingTypes.index', ['trainingTypes' => $trainingTypes]);
+        return view('training_types.index', compact('trainingTypes'));
 
-        //return 'welcome'; //view('employees.index');
+        
     }
 
     /**
@@ -33,9 +33,7 @@ class TrainingTypeController extends Controller
     public function create()
     {
 
-        $trainingTypes = TrainingType::all()->toArray();;
-        // dd($islands);
-        return view('trainingTypes.create')->withTrainingTypes($trainingTypes);
+        return view('training_types.create');
     }
 
     /**
@@ -51,21 +49,15 @@ class TrainingTypeController extends Controller
             $results = TrainingType::create($input);
 
 
-        return redirect()->route('training_type.index')->with('exception', 'Operation failed !');
+        return redirect()->route('training_types.index')->with('exception', 'Operation failed !');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Employee  $employee
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
-        $trainingType = TrainingType::find($id);
+        $trainingTypes = TrainingType::find($id);
 
-		return view('trainingTypes.show')
-	        ->with('trainingType',$trainingType);
+		return view('training_types.show')->with('training_types',$trainingTypes);//match aran am variable aikai ma are n te views iaan te resouces
     }
 
     /**
@@ -76,8 +68,8 @@ class TrainingTypeController extends Controller
      */
     public function edit($id)
     {
-        $trainingType = TrainingType::find($id);
-		return view('trainingTypes.edit')->withtrainingType($trainingType);
+        $trainingTypes = TrainingType::find($id);
+		return view('training_types.edit')->withtrainingType($trainingTypes);//match aran am variable aikai ma are n te views iaan te resouces
     }
 
     /**
@@ -94,7 +86,7 @@ class TrainingTypeController extends Controller
         $data = TrainingType::find($id)->update($request->all());
 
 
-           return redirect()->route('training_type.index')->with('message', 'Updated successfully.');
+           return redirect()->route('training_types.index')->with('message', 'Updated successfully.');
     }
 
     /**

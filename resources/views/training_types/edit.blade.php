@@ -26,7 +26,7 @@
                             </div>
                             
                             <div class="box-body">
-                                <form action="{{ route('training_types.update', $training_types['id']) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('training_types.update', $trainingType['id']) }}" method="post" enctype="multipart/form-data">
                                     @csrf
 
                                     <input type="hidden" name="_method" value="PATCH">
@@ -39,7 +39,7 @@
                                                     <div class="form-group col-md-6">
                                                         <label for="training_types"><span class="text-danger">*</span>Training Name:</label>
 
-                                                        <input type="text" class="form-control {{ $errors->has('training_name') ? ' is-invalid' : '' }}"  value="{{$training_types['training_name']}}" id="training_name" placeholder="Enter a Training Name" name="training_name" autocomplete="off">
+                                                        <input type="text" class="form-control {{ $errors->has('training_name') ? ' is-invalid' : '' }}"  value="{{$trainingType['training_name']}}" id="training_name" placeholder="Enter a Training Name" name="training_name" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -50,7 +50,7 @@
                                                     <div class="form-group col-md-6">
                                                         <label for="training_types"><span class="text-danger">*</span>Training Description:</label>
 
-                                                        <input type="text" class="form-control {{ $errors->has('training_description') ? ' is-invalid' : '' }}"  value="{{$training_types['training_description']}}" id="training_description" placeholder="Enter a Training Description" name="training_description" autocomplete="off">
+                                                        <input type="text" class="form-control {{ $errors->has('training_description') ? ' is-invalid' : '' }}"  value="{{$trainingType['training_description']}}" id="training_description" placeholder="Enter a Training Description" name="training_description" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}

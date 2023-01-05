@@ -72,13 +72,13 @@
                     <tbody id="myTable">
                         @php $tl = 1; @endphp
                       
-                        @foreach($training_types as $training_types)
+                        @foreach($trainingTypes as $training_types)
                         <tr>
                             <td>{{ $tl++ }}</td>
-                            <td>{{ $training_types['id'] }}</td>
+                            <td>{{ $training_types['training_id'] }}</td>
                             
-                            <td>{{ $employee['training_name'] }}</td>
-                            <td>{{ $employee['training_description'] }}</td>
+                            <td>{{ $training_types['training_name'] }}</td>
+                            <td>{{ $training_types['training_description'] }}</td>
                         
                             <td class="text-center">{{ date("d F Y", strtotime($training_types['created_at'])) }}</td>
                            

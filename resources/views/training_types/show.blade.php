@@ -17,7 +17,7 @@
                 <div class="col-lg-7">
                     <div class="mb-4">
                     <form method="post">
-                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('training_types.edit',$training_types)}}">Edit->Training Types List</a>
+                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('training_types.edit', $training_types)}}">Edit->Training Types List</a>
                     <h3>Training Types Infor:</h3>
                     </form>
                     </div>
@@ -28,9 +28,9 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                     
                                      <!-- Details Show List -->
-                                        <div class="row">
+                                     <div class="row">
                                             <div class="col-md-6">
-                                                <label>Identification #:</label>
+                                                <label>ID:</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{$training_types['id']}}</p>
