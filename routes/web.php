@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IslandController;
 use App\Http\Controllers\VillageController;
-use App\Http\Controllers\Training_TypesController;
+use App\Http\Controllers\TrainingTypeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,15 +73,15 @@ Route::group(['middleware' => 'auth'], function ()
 
      //Training Types
      Route::group(['as' => 'training_types.', 'prefix' => 'training_types'], function () {
-        Route::get('', [Training_TypesController::class, 'index'])->name('index');
-        Route::get('create', [Training_TypesController::class, 'create'])->name('create');
-        Route::post('', [Training_TypesController::class, 'store'])->name('store');
-        Route::get('export', [Training_TypesController::class, 'exportlist'])->name('export');
-        Route::group(['prefix' => '{training_types}'], function () { 
-        Route::get('', [Training_TypesController::class, 'show'])->name('show');
-        Route::get('edit', [Training_TypesController::class, 'edit'])->name('edit');
-        Route::match(['PUT', 'PATCH'], '', [Training_TypesController::class, 'update'])->name('update');
-        Route::delete('', [Training_TypesController::class, 'delete'])->name('delete');
+        Route::get('', [TrainingTypeController::class, 'index'])->name('index');
+        Route::get('create', [TrainingTypeController::class, 'create'])->name('create');
+        Route::post('', [TrainingTypeController::class, 'store'])->name('store');
+        Route::get('export', [TrainingTypeController::class, 'exportlist'])->name('export');
+        Route::group(['prefix' => '{trainingtype}'], function () { 
+        Route::get('', [TrainingTypeController::class, 'show'])->name('show');
+        Route::get('edit', [TrainingTypeController::class, 'edit'])->name('edit');
+        Route::match(['PUT', 'PATCH'], '', [TrainingTypeController::class, 'update'])->name('update');
+        Route::delete('', [TrainingTypeController::class, 'delete'])->name('delete');
         });
     });
 
