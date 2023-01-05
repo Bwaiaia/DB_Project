@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IslandController;
 use App\Http\Controllers\VillageController;
+use App\Http\Controllers\Training_TypesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,6 +68,20 @@ Route::group(['middleware' => 'auth'], function ()
         Route::get('edit', [VillageController::class, 'edit'])->name('edit');
         Route::match(['PUT', 'PATCH'], '', [VillageController::class, 'update'])->name('update');
         Route::delete('', [VillageController::class, 'delete'])->name('delete');
+        });
+    });
+
+     //Training Types
+     Route::group(['as' => 'training_types.', 'prefix' => 'training_types'], function () {
+        Route::get('', [Training_TypesController::class, 'index'])->name('index');
+        Route::get('create', [Training_TypesController::class, 'create'])->name('create');
+        Route::post('', [Training_TypesController::class, 'store'])->name('store');
+        Route::get('export', [Training_TypesController::class, 'exportlist'])->name('export');
+        Route::group(['prefix' => '{training_types}'], function () { 
+        Route::get('', [Training_TypesController::class, 'show'])->name('show');
+        Route::get('edit', [Training_TypesController::class, 'edit'])->name('edit');
+        Route::match(['PUT', 'PATCH'], '', [Training_TypesController::class, 'update'])->name('update');
+        Route::delete('', [Training_TypesController::class, 'delete'])->name('delete');
         });
     });
 

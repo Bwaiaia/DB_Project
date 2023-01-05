@@ -32,7 +32,7 @@
                                 <input type="hidden" name="_method" value="PATCH">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">                              
                                        
-                                          <div class="box-body">
+                                       <div class="box-body">
                                           <h4 class="box-title text-info"> SECTION A</h4>
                                                 <hr class="my-15">
                                                 <div class="row">
