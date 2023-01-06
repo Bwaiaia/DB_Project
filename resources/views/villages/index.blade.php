@@ -12,9 +12,9 @@
          <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/home') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/employee') }}">Employee List</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/island') }}">Island List</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/training_types') }}">Training Types</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/employee') }}">Employee List</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/island') }}">Island List</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/training_types') }}">Training Types</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Village List</li>
             </ol>
         </nav>
