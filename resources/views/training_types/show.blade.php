@@ -30,7 +30,7 @@
                                      <!-- Details Show List -->
                                      <div class="row">
                                             <div class="col-md-6">
-                                                <label>ID:</label>
+                                                <label>Training Identification:</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{$training_types['id']}}</p>
