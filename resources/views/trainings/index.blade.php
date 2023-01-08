@@ -7,7 +7,7 @@
 
     <section class="content-header">
         <h1>
-            {{ __('Training Types') }}
+            {{ __('Trainings') }}
         </h1>
          <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -15,7 +15,8 @@
                 <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/island') }}">Island List</a></li>
                 <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/village') }}">Village List</a></li>
                 <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/employee') }}">Employee List</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Training Types List</li>
+                <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/training_types') }}">Training_Types List</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Training List</li>
             </ol>
         </nav>
     </section>
@@ -25,11 +26,11 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">{{ __('Manage Training Types') }}</h3>
+                <h3 class="box-title">{{ __('Manage Trainings') }}</h3>
 
                 <div class="box-header with-border">
                         <div class="alert alert-info clearfix">
-                            <a href="{{ route('training_types.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add Training-Types') }}</button></a> 
+                            <a href="{{ route('trainings.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add Trainings') }}</button></a> 
                         </div>
                      </div>
             </div>
@@ -62,30 +63,33 @@
                     <thead>
                         <tr>
                             <th>{{ __(' SL#') }}</th>
-                            <th>{{ __(' ID') }}</th>
-                          
-                            <th>{{ __(' Training Name') }}</th>
-                            <th>{{ __(' Training Description') }}</th>
+                            <th>{{ __(' Training ID:') }}</th>
+                            <th>{{ __(' Island ID:') }}</th>
+                            <th>{{ __(' Training_Types ID:') }}</th>
+                            <th>{{ __(' Training Date') }}</th>
                             <th class="text-center">{{ __('Actions') }}</th>
                         </tr>
                     </thead>
                     <tbody id="myTable">
+                        @php $sl = 1; @endphp
+                        @php $Tl = 1; @endphp
+                        @php $Il = 1; @endphp
                         @php $tl = 1; @endphp
                       
-                        @foreach($trainingTypes as $training_types)
+                        @foreach($trainings as $trainings)
                         <tr>
-                            <td>{{ $tl++ }}</td>
-                            <td>{{ $training_types['training_id'] }}</td>
-                            
-                            <td>{{ $training_types['training_name'] }}</td>
-                            <td>{{ $training_types['training_description'] }}</td>
+                            <td>{{ $sl++ }}</td>
+                            <td>{{ $trainings['$Tl++'] }}</td>
+                            <td>{{ $trainings['$Il++'] }}</td>
+                            <td>{{ $trainings['$tl++'] }}</td>
+                            <td>{{ $training_types['training_date'] }}</td>
                         
-                            <td class="text-center">{{ date("d F Y", strtotime($training_types['created_at'])) }}</td>
+                            <td class="text-center">{{ date("d F Y", strtotime($trainings['created_at'])) }}</td>
                            
                            
                             <td class="text-center">
-                            <a class="btn btn-info text-center" href="{{route('training_types.show', $training_types['id'])}}">Show</a>      
-                               <a href="{{ route('training_types.edit', $training_types['id']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
+                            <a class="btn btn-info text-center" href="{{route('trainings.show', $trainings['id'])}}">Show</a>      
+                               <a href="{{ route('trainings.edit', $trainings['id']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
                               
                             </td>
                         </tr>

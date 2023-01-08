@@ -12,4 +12,6 @@ class Island extends Model
     
     protected $table = 'islands';
     protected $fillable = ['name'];
+
+    
 }
