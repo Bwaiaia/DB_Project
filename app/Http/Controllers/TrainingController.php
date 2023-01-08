@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Island;
 use Illuminate\Http\Request;
 use App\Models\TrainingType;
-
+use App\Models\Training;
 class TrainingController extends Controller
 {
     
@@ -16,7 +16,7 @@ class TrainingController extends Controller
         
 
         // Pass data to view
-        return view('trainings.index', compact('trainings'));
+        return view('trainings.index', compact('training'));
 
         
     }
@@ -24,7 +24,9 @@ class TrainingController extends Controller
     public function create()
     {
 
-        return view('trainings.create');
+        $island = Island::all()->toArray();
+        dd($island);
+        return view('trainings.create', compact('island'));
     }
 
     public function store(Request $request)

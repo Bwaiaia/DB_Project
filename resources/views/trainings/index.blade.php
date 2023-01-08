@@ -76,13 +76,13 @@
                         @php $Il = 1; @endphp
                         @php $tl = 1; @endphp
                       
-                        @foreach($trainings as $trainings)
+                        @foreach($training as $trainings)
                         <tr>
                             <td>{{ $sl++ }}</td>
                             <td>{{ $trainings['$Tl++'] }}</td>
                             <td>{{ $trainings['$Il++'] }}</td>
                             <td>{{ $trainings['$tl++'] }}</td>
-                            <td>{{ $training_types['training_date'] }}</td>
+                            <td>{{ $trainings['training_date'] }}</td>
                         
                             <td class="text-center">{{ date("d F Y", strtotime($trainings['created_at'])) }}</td>
                            

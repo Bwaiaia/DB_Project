@@ -35,6 +35,31 @@
                                                 <div class="row">
                                                
                                                    <div class="form-group col-md-6">
+                                                      <label for="training_date"><span class="text-danger">*</span>Island ID:</label>
+                                                   
+                                                         
+                                                            <input type="text" class="form-control {{ $errors->has('training_date') ? ' is-invalid' : '' }}" value="{{ old('training_date') }}" id="training_date" placeholder="Enter a training date" name="training_date" autocomplete="off">
+                                                           @if(session()->has('error'))
+                                                            <div class="alert alert-danger">
+                                                               {{ session()->get('error') }}
+                                                            </div>
+                                                         @endif
+                                                   
+                                                   </div>
+
+                                                   <div class="form-group col-md-6">
+                                                      <label for="training_date"><span class="text-danger">*</span>Training Type ID:</label>
+                                                   
+                                                            <input type="text" class="form-control {{ $errors->has('training_date') ? ' is-invalid' : '' }}" value="{{ old('training_date') }}" id="training_date" placeholder="Enter a training date" name="training_date" autocomplete="off">
+                                                           @if(session()->has('error'))
+                                                            <div class="alert alert-danger">
+                                                               {{ session()->get('error') }}
+                                                            </div>
+                                                         @endif
+                                                   
+                                                   </div>
+
+                                                   <div class="form-group col-md-6">
                                                       <label for="training_date"><span class="text-danger">*</span>Training Date:</label>
                                                    
                                                             <input type="text" class="form-control {{ $errors->has('training_date') ? ' is-invalid' : '' }}" value="{{ old('training_date') }}" id="training_date" placeholder="Enter a training date" name="training_date" autocomplete="off">

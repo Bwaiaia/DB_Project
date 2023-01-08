@@ -11,7 +11,7 @@ class Training extends Model
     use HasFactory;
 
     protected $table = 'trainings';
-    protected $fillable = ['training_date'];
+    protected $fillable = ['training_date','island_id','training_type_id'];
 
     public function training_types()
     {
@@ -21,7 +21,7 @@ class Training extends Model
 
     public function islands()
     {
-        return $this->hasOne(Island::class);
+        return $this->belongsTo(Island::class);
     }
 
     public function training_details()
