@@ -80,10 +80,13 @@ class TrainingController extends Controller
                 'gender'=>$request->gender,
             ]);
             DB::commit();
-        } catch (\Exception $e) {
-            DB::rollback();
-            return 'something went wrong';
-        }
+        } 
+            //error
+            catch (\Exception $e) 
+            {
+                DB::rollback();
+                return 'something went wrong';
+            }
 
         return redirect()->route('training.index')->with('exception', 'Operation failed !');
     }
@@ -91,7 +94,7 @@ class TrainingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\Training  $training
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -105,7 +108,7 @@ class TrainingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\Training  $training
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -121,7 +124,7 @@ class TrainingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\Training  $training
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
