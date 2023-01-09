@@ -10,7 +10,7 @@
                 <div class="card-body">
                 <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
-             
+              
 
                     <!-- Main content -->
                     <section class="content">
@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <div class="box-body">
-                            <form method="POST" enctype="multipart/form-data" id="upload-file" action=" " >
+                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('training.store') }}" >
                                                                     @csrf
                                        
                                           <div class="box-body">
@@ -37,7 +37,7 @@
                                                    <select name="island_id" id="island_id" class="form-control">
                                                         <option value="" selected disabled>{{ __('Select one') }}</option>
                                                         @foreach($islands as $island)
-                                                        <option value="{{ $island['id'] }}">{{ $island->island_name }}</option>
+                                                        <option value="{{ $island['id'] }}">{{ $island['island_name'] }}</option>
                                                         @endforeach
                                                     </select>
                                                           @if ($errors->has('island_id'))
@@ -45,14 +45,14 @@
                                                                     <strong>{{ $errors->first('island_id') }}</strong>
                                                                 </span>
                                                           @endif
-                                                     
+                                                      
                                                    </div>
                                                    <div class="form-group col-md-6">
                                                    <label for="training_type_id">{{ __('TRAINING NAME') }} <span class="text-danger">*</span></label>
                                                    <select name="training_type_id" id="training_type_id" class="form-control">
                                                         <option value="" selected disabled>{{ __('Select one') }}</option>
                                                         @foreach($types as $training)
-                                                        <option value="{{ $training['id'] }}">{{ $training->training_name }}</option>
+                                                        <option value="{{ $training['id'] }}">{{ $training['training_name'] }}</option>
                                                         @endforeach
                                                     </select>
                                                           @if ($errors->has('training_type_id'))
@@ -60,7 +60,7 @@
                                                                     <strong>{{ $errors->first('training_type_id') }}</strong>
                                                                 </span>
                                                           @endif
-                                                     
+                                                      
                                                    </div>
                                                 <div class="row">
                                                
@@ -75,7 +75,7 @@
                                                          @endif
                                                    
                                                    </div>
-                                               </div>  
+                                               </div>   
                                              
                                                 <!-- new input -->
                                                 <h4 class="box-title text-info"> SECTION B</h4>
@@ -90,7 +90,7 @@
                                                                {{ session()->get('error') }}
                                                             </div>
                                                          @endif
-                                                     
+                                                      
                                                    </div>
                                                    <div class="form-group col-md-2">
                                                    <label for="participant_last_name"><span class="text-danger">*</span> LAST NAME</label>
@@ -100,7 +100,7 @@
                                                                {{ session()->get('error') }}
                                                             </div>
                                                          @endif
-                                                     
+                                                      
                                                    </div>
                                                    <div class="form-group col-md-3">
                                                    <label for="village_id"><span class="text-danger">*</span> VILLAGE NAME</label>
@@ -115,7 +115,7 @@
                                                                {{ session()->get('error') }}
                                                             </div>
                                                          @endif
-                                                     
+                                                      
                                                    </div>
                                                    <div class="form-group col-md-2">
                                                    <label for="age">{{ __('AGE') }} <span class="text-danger">*</span></label>
@@ -127,7 +127,7 @@
                                                             </span>
                                                             @endif
                                                         </div>
-                                                 
+                                                  
                                                    </div>
 
                                                    <div class="form-group col-md-3">
@@ -143,7 +143,7 @@
                                                                {{ session()->get('error') }}
                                                             </div>
                                                          @endif
-                                                     
+                                                      
                                                    </div>
                                                    
                                                 </div>
@@ -181,5 +181,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-       
+        
 @endsection
+   
