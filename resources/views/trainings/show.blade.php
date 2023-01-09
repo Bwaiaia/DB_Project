@@ -17,8 +17,8 @@
                 <div class="col-lg-7">
                     <div class="mb-4">
                     <form method="post">
-                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('$training_type.edit',$trainingType)}}">Edit Profile</a>
-                        <h1>{{$trainingType['training_name']}}</h1>
+                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('$trainings.edit',$training)}}">Edit Profile</a>
+                        <h1>Training Infor:</h1>
                     </form>
                     </div>
                     <div>
@@ -30,18 +30,58 @@
                                      
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Training Name</label>
+                                                <label>Island Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$trainingType['training_name']}}</p>
+                                                <p>{{$training['island_name']}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Training Description</label>
+                                                <label>Village Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$trainingType['training_description']}}</p>
+                                                <p>{{$training['village_name']}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Training Name:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$training['training_name']}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>First Name:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$training['participant_first_name']}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Last Name:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$training['participant_last_name']}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Age:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$training['age']}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Gender:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$training['gender']}}</p>
                                             </div>
                                         </div>
                                  

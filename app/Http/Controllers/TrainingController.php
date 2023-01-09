@@ -19,8 +19,10 @@ class TrainingController extends Controller
      */
     public function index()
     {
+       // $training = Training::all();
 
-        $trainings = DB::table('islands')
+        
+        $training = DB::table('islands')
         ->select('trainings.id', 'islands.island_name', 'villages.village_name', 'trainings.training_date', 'training_details.participant_first_name', 'training_details.participant_last_name', 'training_details.age', 'training_details.gender', 'training_types.training_name')
         ->leftJoin('trainings','islands.id','=','trainings.island_id')
         ->leftJoin('training_types','trainings.training_type_id','=','training_types.id')
@@ -29,10 +31,11 @@ class TrainingController extends Controller
         ->whereNotNull('trainings.training_type_id')
         ->whereNotNull('training_details.village_id')
         ->get();
+        
         // dd( $trainings);
 
         // Pass data to view
-        return view('trainings.index', ['trainings' => $trainings]);
+        return view('trainings.index', ['trainings' => $training]);
 
         //return 'welcome'; //view('employees.index');
     }
