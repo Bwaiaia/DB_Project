@@ -133,11 +133,11 @@ class TrainingController extends Controller
     public function update(Request $request, $id)
     {
         // $Training = $request->all();
-     
-        $data = Training::find($id)->update($request->all());
+        $training = $request->all();
+        $data = Training::find($id)->update($training);
 
 
-           return redirect()->route('training_type.index')->with('message', 'Updated successfully.');
+           return redirect()->route('trainings.index')->with('message', 'Updated successfully.');
     }
 
     /**

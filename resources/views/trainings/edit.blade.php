@@ -150,10 +150,10 @@
                                                    
                                                
 
-                                          <!-- /.box-body -->
-                                          <div class="box-footer text-right">
+                                           <!-- /.box-body -->
+                                           <div class="box-footer text-right">
                                                 <button type="submit" class="btn btn-primary btn-outline">
-                                                   <i class="ti-save-alt"></i> Save
+                                                   <i class="ti-save-alt"></i> Update
                                                 </button>
                                                 <a class="btn btn-warning btn-outline mr-1" href="">
                                                    <i class="ti-trash"></i> Cancel
