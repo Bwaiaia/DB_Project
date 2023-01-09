@@ -75,7 +75,7 @@
                             <td>{{ $sl++ }}</td>
                      
                             
-                            <td>{{ $island['name'] }}</td>
+                            <td>{{ $island['island_name'] }}</td>
                             
                         
                             <td class="text-center">{{ date("d F Y", strtotime($island['created_at'])) }}</td>

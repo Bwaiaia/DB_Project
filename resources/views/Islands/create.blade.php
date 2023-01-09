@@ -34,9 +34,9 @@
                                                 <div class="row">
                                                
                                                    <div class="form-group col-md-6">
-                                                      <label for="name"><span class="text-danger">*</span>Island Name</label>
+                                                      <label for="island_name"><span class="text-danger">*</span>Island Name</label>
                                                    
-                                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" id="name" placeholder="Enter a Island Name:" name="name" autocomplete="off">
+                                                            <input type="text" class="form-control {{ $errors->has('island_name') ? ' is-invalid' : '' }}" value="{{ old('island_name') }}" id="name" placeholder="Enter a Island Name:" name="island_name" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}

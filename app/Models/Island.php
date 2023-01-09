@@ -11,7 +11,7 @@ class Island extends Model
 
     
     protected $table = 'islands';
-    protected $fillable = ['name'];
+    protected $fillable = ['island_name'];
 
     public function trainings()
     {
