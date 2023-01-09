@@ -159,8 +159,10 @@
                                                    <i class="ti-trash"></i> Cancel
                                                 </a>
                                           </div>
+                                          <!-- tibwa karina aio.. -->
+                                          @method('PUT')
 
-                                          @method('POST')
+                                          
                                           <!-- /.box-footer -->
                                        </form>
                                        </div>

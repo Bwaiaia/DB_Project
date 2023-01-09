@@ -132,10 +132,26 @@ class TrainingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $Training = $request->all();
-        $training = $request->all();
-        $data = Training::find($id)->update($training);
+        
+           // $training = Training::findOrFail($id);
 
+           // $training->island_name = $request->island_name;
+            //$training->training_name = $request->training_name;
+            //$training->training_date = $request->training_date;
+            
+            //$training->participant_first_name = $request->participant_first_name;
+            //$training->participant_last_name = $request->participant_last_name;
+            //$training->village_name = $request->village_name;
+            //$training->age = $request->age;
+            //$training->gender = $request->gender;
+            
+            //$post->save();
+        
+        //$training = $request->all();
+        //$data = Training::find($id)->update($training);
+
+        $training = Training::find($id);   
+        //$training = Training::where('id', $id);
 
            return redirect()->route('trainings.index')->with('message', 'Updated successfully.');
     }
