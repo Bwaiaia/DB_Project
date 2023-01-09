@@ -26,7 +26,7 @@
                             </div>
                             
                             <div class="box-body">
-                                <form action="{{ route('training_types.update', $trainingType['id']) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('training_type.update', $trainingType['id']) }}" method="post" enctype="multipart/form-data">
                                     @csrf
 
                                     <input type="hidden" name="_method" value="PATCH">

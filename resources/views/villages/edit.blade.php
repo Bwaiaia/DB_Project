@@ -38,9 +38,9 @@
                                                 <div class="row">
                                                
                                                    <div class="form-group col-md-6">
-                                                      <label for="name"><span class="text-danger">*</span> VILLAGE NAME</label>
+                                                      <label for="village_name"><span class="text-danger">*</span> VILLAGE NAME</label>
                                                    
-                                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"  value="{{$village['name']}}" id="name" placeholder=".................." name="name" autocomplete="off">
+                                                            <input type="text" class="form-control {{ $errors->has('village_name') ? ' is-invalid' : '' }}"  value="{{$village['village_name']}}" id="name" placeholder=".................." name="village_name" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -49,9 +49,9 @@
                                                    
                                                    </div>
                                                    <div class="form-group col-md-6">
-                                                      <label for="age"><span class="text-danger">*</span> Description</label>
+                                                      <label for="village_description"><span class="text-danger">*</span> Description</label>
                                                      
-                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{$village['description']}}" id="age" placeholder=".................." name="description" autocomplete="off">
+                                                            <input type="age" class="form-control {{ $errors->has('village_description') ? ' is-invalid' : '' }}" value="{{$village['village_description']}}" id="age" placeholder=".................." name="village_description" autocomplete="off">
                                                             @if ($errors->has('receive_date'))
                                                                <span class="invalid-feedback" role="alert">
                                                                <strong>{{ $errors->first('age') }}</strong>

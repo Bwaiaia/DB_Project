@@ -12,15 +12,9 @@
          <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/home') }}">Dashboard</a></li>
-<<<<<<< HEAD
-                <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/island') }}">Island List</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/village') }}">Village List</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('http://localhost/project/public/employee') }}">Employee List</a></li>
-=======
                 <li class="breadcrumb-item"><a href="{{ url('/island') }}">Island List</a></li>
                 <li class="breadcrumb-item"><a href="{{ url('/village') }}">Village List</a></li>
                 <li class="breadcrumb-item"><a href="{{ url('/employee') }}">Employee List</a></li>
->>>>>>> fa5a10c05f4d4c936ca166c7cf0220ff503adb37
                 <li class="breadcrumb-item active" aria-current="page">Training Types List</li>
             </ol>
         </nav>
@@ -35,7 +29,7 @@
 
                 <div class="box-header with-border">
                         <div class="alert alert-info clearfix">
-                            <a href="{{ route('training_types.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add Training-Types') }}</button></a> 
+                            <a href="{{ route('training_type.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add Training-Types') }}</button></a> 
                         </div>
                      </div>
             </div>
@@ -90,8 +84,8 @@
                            
                            
                             <td class="text-center">
-                            <a class="btn btn-info text-center" href="{{route('training_types.show', $training_types['id'])}}">Show</a>      
-                               <a href="{{ route('training_types.edit', $training_types['id']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
+                            <a class="btn btn-info text-center" href="{{route('training_type.show', $training_types['id'])}}">Show</a>      
+                               <a href="{{ route('training_type.edit', $training_types['id']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
                               
                             </td>
                         </tr>

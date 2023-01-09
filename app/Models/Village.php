@@ -11,6 +11,6 @@ class Village extends Model
     use HasFactory;
 
     protected $table = 'villages';
-    protected $fillable = ['village_name', 'description'];
+    protected $fillable = ['village_name', 'village_description'];
 
 }

@@ -49,7 +49,7 @@ class TrainingTypeController extends Controller
             $results = TrainingType::create($input);
 
 
-        return redirect()->route('training_types.index')->with('exception', 'Operation failed !');
+        return redirect()->route('training_type.index')->with('exception', 'Operation failed !');
     }
 
     
@@ -86,7 +86,7 @@ class TrainingTypeController extends Controller
         $data = TrainingType::find($id)->update($request->all());
 
 
-           return redirect()->route('training_types.index')->with('message', 'Updated successfully.');
+           return redirect()->route('training_type.index')->with('message', 'Updated successfully.');
     }
 
     /**

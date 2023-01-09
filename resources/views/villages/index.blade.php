@@ -77,7 +77,7 @@
                      
                             
                             <td>{{$village['village_name'] }}</td>
-                            <td>{{$village['description']}}</td>
+                            <td>{{$village['village_description']}}</td>
                             
                         
                             <td class="text-center">{{ date("d F Y", strtotime($village['created_at'])) }}</td>

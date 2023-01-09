@@ -1,10 +1,10 @@
 <?php
-
+  
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
-class CreateVillagesTable extends Migration
+  
+class CreateNavbarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateVillagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('villages', function (Blueprint $table) {
+        Schema::create('navbars', function (Blueprint $table) {
             $table->id();
-            $table->string('village_name');
-            $table->string('village_description');
+            $table->string('name');
+            $table->string('route');
+            $table->integer('ordering')->default(0);
             $table->timestamps();
         });
     }
-
+  
     /**
      * Reverse the migrations.
      *
@@ -28,6 +29,6 @@ class CreateVillagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('villages');
+        Schema::dropIfExists('navbars');
     }
 }

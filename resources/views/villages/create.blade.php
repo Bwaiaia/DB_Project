@@ -45,12 +45,12 @@
                                                    
                                                    </div>
                                                    <div class="form-group col-md-6">
-                                                      <label for="description"><span class="text-danger">*</span> DESCRIPTION</label>
+                                                      <label for="village_description"><span class="text-danger">*</span> DESCRIPTION</label>
                                                      
-                                                            <input type="age" class="form-control {{ $errors->has('description') ? ' is-invalid' : '' }}" value="{{ old('description') }}" id="description" placeholder="Enter description..............." name="description" autocomplete="off">
-                                                            @if ($errors->has('receive_date'))
+                                                            <input type="village_description" class="form-control {{ $errors->has('village_description') ? ' is-invalid' : '' }}" value="{{ old('village_description') }}" id="village_description" placeholder="Enter description..............." name="village_description" autocomplete="off">
+                                                            @if ($errors->has('village_description'))
                                                                <span class="invalid-feedback" role="alert">
-                                                               <strong>{{ $errors->first('description') }}</strong>
+                                                               <strong>{{ $errors->first('village_description') }}</strong>
                                                             </span>
                                                             @endif
                                                    

@@ -26,7 +26,7 @@
                                 </div>
                               </div>
                             <div class="box-body">
-                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('training_types.store') }}" >
+                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('training_type.store') }}" >
                                                                     @csrf
                                        
                                           <div class="box-body">
