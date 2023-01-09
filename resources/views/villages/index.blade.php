@@ -76,7 +76,7 @@
                             <td>{{ $vl++ }}</td>
                      
                             
-                            <td>{{$village['name'] }}</td>
+                            <td>{{$village['village_name'] }}</td>
                             <td>{{$village['description']}}</td>
                             
                         
