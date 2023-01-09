@@ -6,6 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card card-new-task">
+<<<<<<< HEAD
                 <div class="card-header"></div>
                 <div class="card-body">
                 <div class="content-wrapper">
@@ -18,11 +19,27 @@
                         <div class="box">
                             <div class="box-header with-border">
                                 <h3 class="box-title">{{ __('ENTER TRAINING INFOMATION AND DETAILS') }}</h3>
+=======
+                <div class="card-header">Test_Tera aio??</div>
+                <div class="card-body">
+                <div class="content-wrapper">
+                <!-- Content Header(Page header) -->
+                
+                
+                    <!-- Main Content -->
+                    <section class="content">
+
+                        <!-- Default box-->
+                        <div class="box">
+                        <div class="box-header with-border">
+                                <h3 class="box-title">{{ __('ENTER TRAINING TYPES DETAILS') }}</h3>
+>>>>>>> 9f4c61fe8071bb5077adece19156ef2f34b19700
 
                                 <div class="box-tools pull-right">
                                     <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                                     <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
                                 </div>
+<<<<<<< HEAD
                             </div>
                             <div class="box-body">
                             <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('training.store') }}" >
@@ -68,6 +85,23 @@
                                                       <label for="training_date"><span class="text-danger">*</span>TRAINING DATE</label>
                                                    
                                                             <input type="date" class="form-control {{ $errors->has('training_date') ? ' is-invalid' : '' }}" value="{{ old('training_date') }}" id="training_date"  name="training_date" autocomplete="off">
+=======
+                              </div>
+                            <div class="box-body">
+                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('trainings.store') }}" >
+                                                                    @csrf
+                                       
+                                          <div class="box-body">
+                                          <h4 class="box-title text-info"> TRAININGS SECTION</h4>
+                                                <hr class="my-15">
+                                                <div class="row">
+                                               
+                                                   <div class="form-group col-md-6">
+                                                      <label for="training_date"><span class="text-danger">*</span>Island ID:</label>
+                                                   
+                                                         
+                                                            <input type="text" class="form-control {{ $errors->has('training_date') ? ' is-invalid' : '' }}" value="{{ old('training_date') }}" id="training_date" placeholder="Enter a training date" name="training_date" autocomplete="off">
+>>>>>>> 9f4c61fe8071bb5077adece19156ef2f34b19700
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -75,6 +109,7 @@
                                                          @endif
                                                    
                                                    </div>
+<<<<<<< HEAD
                                                </div>   
                                              
                                                 <!-- new input -->
@@ -138,11 +173,19 @@
                                                         <option value="0">{{ __('Female') }}</option>
                                                        
                                                     </select>
+=======
+
+                                                   <div class="form-group col-md-6">
+                                                      <label for="training_date"><span class="text-danger">*</span>Training Type ID:</label>
+                                                   
+                                                            <input type="text" class="form-control {{ $errors->has('training_date') ? ' is-invalid' : '' }}" value="{{ old('training_date') }}" id="training_date" placeholder="Enter a training date" name="training_date" autocomplete="off">
+>>>>>>> 9f4c61fe8071bb5077adece19156ef2f34b19700
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
                                                             </div>
                                                          @endif
+<<<<<<< HEAD
                                                       
                                                    </div>
                                                    
@@ -150,6 +193,23 @@
                                                    
                                                
 
+=======
+                                                   
+                                                   </div>
+
+                                                   <div class="form-group col-md-6">
+                                                      <label for="training_date"><span class="text-danger">*</span>Training Date:</label>
+                                                   
+                                                            <input type="text" class="form-control {{ $errors->has('training_date') ? ' is-invalid' : '' }}" value="{{ old('training_date') }}" id="training_date" placeholder="Enter a training date" name="training_date" autocomplete="off">
+                                                           @if(session()->has('error'))
+                                                            <div class="alert alert-danger">
+                                                               {{ session()->get('error') }}
+                                                            </div>
+                                                         @endif
+                                                   
+                                                   </div>
+                                                   
+>>>>>>> 9f4c61fe8071bb5077adece19156ef2f34b19700
                                           <!-- /.box-body -->
                                           <div class="box-footer text-right">
                                                 <button type="submit" class="btn btn-primary btn-outline">
@@ -172,6 +232,7 @@
                                     </div>
                               </div>
                            </div>
+<<<<<<< HEAD
 
                         </div>
 
@@ -184,3 +245,6 @@
         
 @endsection
    
+=======
+                        </div>
+>>>>>>> 9f4c61fe8071bb5077adece19156ef2f34b19700

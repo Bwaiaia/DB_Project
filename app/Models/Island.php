@@ -12,4 +12,9 @@ class Island extends Model
     
     protected $table = 'islands';
     protected $fillable = ['name'];
+
+    public function trainings()
+    {
+        return $this->hasMany(Training::class);
+    }
 }
