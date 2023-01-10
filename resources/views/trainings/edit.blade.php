@@ -26,7 +26,7 @@
                             </div>
                             <div class="box-body">
                             <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('training.update',$training['id']) }}" >
-                                                @method('delete')                   
+                                                @method('PUT')                   
                                                 @csrf
                                        
                                           <div class="box-body">
@@ -153,8 +153,8 @@
 
                                            <!-- /.box-body -->
                                           <div class="box-footer text-right">
-                                                                                                           <!-- manga okirikoo ahah --> 
-                                                <button type="submit" class="btn btn-primary btn-outline" href="{{route('trainings.update', $training['id']">
+                                                                                                          <!-- manga okirikoo ahah --> 
+                                                <button type="submit" class="btn btn-primary btn-outline" href="">
                                                    <i class="ti-save-alt"></i> Update
                                                 </button>
                                                 <a class="btn btn-warning btn-outline mr-1" href="">

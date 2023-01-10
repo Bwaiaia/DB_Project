@@ -15,6 +15,7 @@ class CreateVillagesTable extends Migration
     {
         Schema::create('villages', function (Blueprint $table) {
             $table->id();
+            $table->integer('island_id');
             $table->string('village_name');
             $table->string('village_description');
             $table->timestamps();

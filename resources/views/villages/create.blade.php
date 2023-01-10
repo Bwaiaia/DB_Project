@@ -31,6 +31,26 @@
                                           <div class="box-body">
                                           <h4 class="box-title text-info"> VILLAGE SECTION</h4>
                                                 <hr class="my-15">
+
+                                                <div class="row">
+                                               
+                                                   <div class="form-group col-md-6">
+                                                      <label for="island_id"><span class="text-danger">*</span> Island Name:</label>
+                                                   
+                                                      <select name="island_id" id="island_id" class="form-control">
+                                                        <option value="" selected disabled>{{ __('Select one') }}</option>
+                                                        @foreach($islands as $island)
+                                                        <option value="{{ $island['id'] }}">{{ $island['island_name'] }}</option>
+                                                        @endforeach
+                                                      </select>
+                                                           @if(session()->has('error'))
+                                                            <div class="alert alert-danger">
+                                                               {{ session()->get('error') }}
+                                                            </div>
+                                                         @endif
+                                                   
+                                                   </div>
+
                                                 <div class="row">
                                                
                                                    <div class="form-group col-md-6">

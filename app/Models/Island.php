@@ -17,4 +17,9 @@ class Island extends Model
     {
         return $this->hasMany(Training::class);
     }
+
+    public function villages()
+    {
+        return $this->hasMany(Village::class);
+    }
 }

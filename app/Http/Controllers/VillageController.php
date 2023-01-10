@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
-//use App\Models\Island;
+use App\Models\Island;
 use App\Models\Village;
 use Illuminate\Http\Request;
 
@@ -33,7 +33,9 @@ class VillageController extends Controller
      */
     public function create()
     {
-        return view('villages.create');
+        $island = Island::all()->toArray();
+
+        return view('villages.create', ['islands'=>$island]);
     }
 
     /**

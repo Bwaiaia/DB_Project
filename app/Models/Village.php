@@ -11,6 +11,11 @@ class Village extends Model
     use HasFactory;
 
     protected $table = 'villages';
-    protected $fillable = ['village_name', 'village_description'];
+    protected $fillable = ['island_id', 'village_name', 'village_description'];
+
+    public function island()
+    {
+        return $this->belongsTo(Island::class);
+    }
 
 }
