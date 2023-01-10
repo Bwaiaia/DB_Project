@@ -102,10 +102,21 @@ class TrainingController extends Controller
      */
     public function show($id)
     {
-        $training = Training::find($id);
 
-		return view('trainings.show')
-	        ->with('training',$training);
+
+         $training = DB::table('islands')
+        ->select('trainings.id', 'islands.island_name', 'villages.village_name', 'trainings.training_date', 'training_details.participant_first_name', 'training_details.participant_last_name', 'training_details.age', 'training_details.gender', 'training_types.training_name')
+        ->leftJoin('trainings','islands.id','=','trainings.island_id')
+        ->leftJoin('training_types','trainings.training_type_id','=','training_types.id')
+        ->leftJoin('training_details','trainings.id','=','training_details.training_id')
+        ->leftJoin('villages','training_details.village_id','=','villages.id')
+        ->whereNotNull('trainings.training_type_id')
+        ->whereNotNull('training_details.village_id')
+        ->where('trainings.id', $id)
+        ->get();
+
+        // dd($data);
+		return view('trainings.show', ['training' => $training]);  
     }
 
     /**
@@ -147,10 +158,10 @@ class TrainingController extends Controller
             
             //$post->save();
         
-        //$training = $request->all();
-        //$data = Training::find($id)->update($training);
+        $training = $request->all();
+        $data = Training::find($id)->update($training);
 
-        $training = Training::find($id);   
+        //$training = Training::find($id);   
         //$training = Training::where('id', $id);
 
            return redirect()->route('trainings.index')->with('message', 'Updated successfully.');

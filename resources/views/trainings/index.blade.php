@@ -89,8 +89,8 @@
                            {{--<td class="text-center">{{ date("d F Y", strtotime($training->created_at)) }}</td>--}}
                            
                             <td class="text-center">
-                            <a class="btn btn-info text-center" href="{{route('training.show', $training->id)}}">Show</a>      
-                               <a href="{{ route('training.edit', $training->id) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
+                            <a class="btn btn-info text-center" href="{{route('trainings.show', $training->id)}}">Show</a>      
+                            <a href="{{ route('trainings.edit', $training->id) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
                               
                             </td>
                         </tr>

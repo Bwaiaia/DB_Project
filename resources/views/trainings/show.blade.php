@@ -17,7 +17,8 @@
                 <div class="col-lg-7">
                     <div class="mb-4">
                     <form method="post">
-                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('$trainings.edit',$training)}}">Edit Profile</a>
+                    
+                    
                         <h1>Training Infor:</h1>
                     </form>
                     </div>
@@ -33,7 +34,7 @@
                                                 <label>Island Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$training['island_name']}}</p>
+                                                <p>{{$training->island_name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -41,7 +42,7 @@
                                                 <label>Village Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$training['village_name']}}</p>
+                                                <p>{{$training->village_name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -49,7 +50,7 @@
                                                 <label>Training Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$training['training_name']}}</p>
+                                                <p>{{$training->training_name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -57,7 +58,7 @@
                                                 <label>First Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$training['participant_first_name']}}</p>
+                                                <p>{{$training->participant_first_name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -65,7 +66,7 @@
                                                 <label>Last Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$training['participant_last_name']}}</p>
+                                                <p>{{$training->participant_last_name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -73,7 +74,7 @@
                                                 <label>Age:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$training['age']}}</p>
+                                                <p>{{$training->age}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -81,7 +82,7 @@
                                                 <label>Gender:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$training['gender']}}</p>
+                                                <p>{{$training->gender}}</p>
                                             </div>
                                         </div>
                                  

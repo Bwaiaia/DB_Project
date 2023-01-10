@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <div class="box-body">
-                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('training.update',$training['id']) }}" >
+                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('trainings.update',$training['id']) }}" >
                                                                     @csrf
                                        
                                           <div class="box-body">
@@ -151,7 +151,7 @@
                                                
 
                                            <!-- /.box-body -->
-                                           <div class="box-footer text-right">
+                                          <div class="box-footer text-right">
                                                 <button type="submit" class="btn btn-primary btn-outline">
                                                    <i class="ti-save-alt"></i> Update
                                                 </button>
