@@ -20,6 +20,8 @@
                     
                     
                         <h1>Training Infor:</h1>
+
+                        
                     </form>
                     </div>
                     <div>

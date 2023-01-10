@@ -92,11 +92,15 @@ Route::group(['middleware' => 'auth'], function ()
         Route::get('create', [TrainingController::class, 'create'])->name('create');
         Route::post('', [TrainingController::class, 'store'])->name('store');
         Route::get('export', [TrainingController::class, 'exportlist'])->name('export');
-        Route::group(['prefix' => '{trainings?}'], function () { 
+        Route::group(['prefix' => '{trainings}'], function () { 
         Route::get('', [TrainingController::class, 'show'])->name('show');
         Route::get('edit', [TrainingController::class, 'edit'])->name('edit');
         Route::match(['PUT', 'PATCH'], '', [TrainingController::class, 'update'])->name('update');
-        Route::delete('', [TrainingController::class, 'delete'])->name('delete');
+        //Route::delete('', [TrainingController::class, 'delete'])->name('delete');
+
+        //new input for routes:
+        Route::get('delete', [TrainingController::class, 'delete'])->name('trainings.delete');
+        Route::delete('', [TrainingController::class, 'destroy'])->name('trainings.destroy');
         });
     });
 

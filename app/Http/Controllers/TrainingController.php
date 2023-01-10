@@ -134,12 +134,15 @@ class TrainingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $Training = $request->all();
-     
-        $data = Training::find($id)->update($request->all());
-
-
+        $training = $request->all();
+        // $data = Training::find($id)->update($request->all());
+        $data = Training::find($id)->update($training);
            return redirect()->route('training_type.index')->with('message', 'Updated successfully.');
+    }
+
+    public function delete(Training $training)
+    {
+        return view('trainings.delete', ["training" => $training]);
     }
 
     /**
@@ -148,8 +151,11 @@ class TrainingController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Training $training)
     {
-        //
+        $training->delete();
+        return redirect()->route('trainings.index')->with('status','Item has been deleted!');
     }
+
+   
 }

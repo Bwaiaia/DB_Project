@@ -25,8 +25,9 @@
                                 </div>
                             </div>
                             <div class="box-body">
-                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('trainings.update',$training['id']) }}" >
-                                                                    @csrf
+                            <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('training.update',$training['id']) }}" >
+                                                @method('delete')                   
+                                                @csrf
                                        
                                           <div class="box-body">
                                           <h4 class="box-title text-info"> SECTION A</h4>
@@ -152,13 +153,16 @@
 
                                            <!-- /.box-body -->
                                           <div class="box-footer text-right">
-                                                <button type="submit" class="btn btn-primary btn-outline">
+                                                                                                           <!-- manga okirikoo ahah --> 
+                                                <button type="submit" class="btn btn-primary btn-outline" href="{{route('trainings.update', $training['id']">
                                                    <i class="ti-save-alt"></i> Update
                                                 </button>
                                                 <a class="btn btn-warning btn-outline mr-1" href="">
                                                    <i class="ti-trash"></i> Cancel
                                                 </a>
                                           </div>
+
+                                          @method('PUT')
                                           <!-- /.box-footer -->
                                        </form>
                                        </div>
