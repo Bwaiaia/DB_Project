@@ -160,7 +160,6 @@
                                                 </a>
                                           </div>
                                           <!-- /.box-footer -->
-                                          @method('PUT')
                                        </form>
                                        </div>
                                                    <!-- /.box-body -->
