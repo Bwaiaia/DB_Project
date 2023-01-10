@@ -17,7 +17,7 @@
                 <div class="col-lg-7">
                     <div class="mb-4">
                     <form method="post">
-                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('training_types.edit', $training_types)}}">Edit->Training Types List</a>
+                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('training_type.edit', $training_types)}}">Edit->Training Types List</a>
                     <h3>Training Types Infor:</h3>
                     </form>
                     </div>

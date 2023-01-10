@@ -87,7 +87,7 @@ Route::group(['middleware' => 'auth'], function ()
     });
 
     //Trainings
-    Route::group(['as' => 'trainings.', 'prefix' => 'trainings'], function () {
+    Route::group(['as' => 'training.', 'prefix' => 'training'], function () {
         Route::get('', [TrainingController::class, 'index'])->name('index');
         Route::get('create', [TrainingController::class, 'create'])->name('create');
         Route::post('', [TrainingController::class, 'store'])->name('store');

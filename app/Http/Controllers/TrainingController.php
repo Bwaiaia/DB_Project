@@ -19,10 +19,8 @@ class TrainingController extends Controller
      */
     public function index()
     {
-       // $training = Training::all();
 
-        
-        $training = DB::table('islands')
+        $trainings = DB::table('islands')
         ->select('trainings.id', 'islands.island_name', 'villages.village_name', 'trainings.training_date', 'training_details.participant_first_name', 'training_details.participant_last_name', 'training_details.age', 'training_details.gender', 'training_types.training_name')
         ->leftJoin('trainings','islands.id','=','trainings.island_id')
         ->leftJoin('training_types','trainings.training_type_id','=','training_types.id')
@@ -31,11 +29,10 @@ class TrainingController extends Controller
         ->whereNotNull('trainings.training_type_id')
         ->whereNotNull('training_details.village_id')
         ->get();
-        
         // dd( $trainings);
 
         // Pass data to view
-        return view('trainings.index', ['trainings' => $training]);
+        return view('trainings.index', ['trainings' => $trainings]);
 
         //return 'welcome'; //view('employees.index');
     }
@@ -83,13 +80,10 @@ class TrainingController extends Controller
                 'gender'=>$request->gender,
             ]);
             DB::commit();
-        } 
-            //error
-            catch (\Exception $e) 
-            {
-                DB::rollback();
-                return 'something went wrong';
-            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return 'something went wrong';
+        }
 
         return redirect()->route('training.index')->with('exception', 'Operation failed !');
     }
@@ -97,32 +91,29 @@ class TrainingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Training  $training
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-
-
-         $training = DB::table('islands')
+        $data['training'] = DB::table('islands')
         ->select('trainings.id', 'islands.island_name', 'villages.village_name', 'trainings.training_date', 'training_details.participant_first_name', 'training_details.participant_last_name', 'training_details.age', 'training_details.gender', 'training_types.training_name')
         ->leftJoin('trainings','islands.id','=','trainings.island_id')
         ->leftJoin('training_types','trainings.training_type_id','=','training_types.id')
         ->leftJoin('training_details','trainings.id','=','training_details.training_id')
         ->leftJoin('villages','training_details.village_id','=','villages.id')
         ->whereNotNull('trainings.training_type_id')
-        ->whereNotNull('training_details.village_id')
-        ->where('trainings.id', $id)
+        ->whereNotNull('training_details.village_id')->where('trainings.id', $id)
         ->get();
 
-        // dd($data);
-		return view('trainings.show', ['training' => $training]);  
+		return view('trainings.show',$data);
+	        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Training  $training
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -138,33 +129,17 @@ class TrainingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Training  $training
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        
-           // $training = Training::findOrFail($id);
+        // $Training = $request->all();
+     
+        $data = Training::find($id)->update($request->all());
 
-           // $training->island_name = $request->island_name;
-            //$training->training_name = $request->training_name;
-            //$training->training_date = $request->training_date;
-            
-            //$training->participant_first_name = $request->participant_first_name;
-            //$training->participant_last_name = $request->participant_last_name;
-            //$training->village_name = $request->village_name;
-            //$training->age = $request->age;
-            //$training->gender = $request->gender;
-            
-            //$post->save();
-        
-        $training = $request->all();
-        $data = Training::find($id)->update($training);
 
-        //$training = Training::find($id);   
-        //$training = Training::where('id', $id);
-
-           return redirect()->route('trainings.index')->with('message', 'Updated successfully.');
+           return redirect()->route('training_type.index')->with('message', 'Updated successfully.');
     }
 
     /**

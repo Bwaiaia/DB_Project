@@ -26,7 +26,7 @@
                             </div>
                             <div class="box-body">
                             <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('training.store') }}" >
-                                 @csrf
+                                                                    @csrf
                                        
                                           <div class="box-body">
                                           <h4 class="box-title text-info"> SECTION A</h4>
@@ -159,10 +159,6 @@
                                                    <i class="ti-trash"></i> Cancel
                                                 </a>
                                           </div>
-                                          <!-- tibwa karina aio.. -->
-                                          @method('PUT')
-
-                                          
                                           <!-- /.box-footer -->
                                        </form>
                                        </div>
