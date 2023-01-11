@@ -63,7 +63,7 @@
                                                    <div class="form-group col-md-6">
                                                       <label for="age"><span class="text-danger">*</span> Age</label>
                                                                                                                                                                                <!--manga edit aio-->  
-                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{$employee['age']}}" {{$employee['id'] == $employee['id'] ? }} id="age" placeholder= {{$employee['age']}} name="age" autocomplete="off">
+                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{$employee['age']}}" id="age" placeholder= {{$employee['age']}} name="age" autocomplete="off">
                                                             @if ($errors->has('receive_date'))
                                                                <span class="invalid-feedback" role="alert">
                                                                <strong>{{ $errors->first('age') }}</strong>
@@ -82,7 +82,7 @@
                                                    <label for="island_id">{{ __('ISLAND') }} <span class="text-danger">*</span></label>
                                                    <select name="island_id" id="island_id" class="form-control">
                                                         <option value="" selected disabled>{{ __('Select one') }}</option>
-                                                        @foreach($island as $island)
+                                                        @foreach($islands as $island)
                                                          <option value="{{ $island['id'] }}" {{  $island['id'] == $employee['island_id'] ? 'selected' : '' }}>{{ $island['island_name'] }}</option>
                                                         @endforeach
                                                     </select>
