@@ -11,6 +11,12 @@ class Employee extends Model
     use HasFactory;
 
     protected $table = 'employees';
-    protected $fillable = ['name', 'age', 'island'];
+    protected $fillable = ['fname', 'lname', 'age', 'island_id'];
+
+    public Function island()
+    {
+        return $this->belongsTo(Island::class);
+    }
+    
 
 }

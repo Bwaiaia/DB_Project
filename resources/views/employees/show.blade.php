@@ -18,7 +18,7 @@
                     <div class="mb-4">
                     <form method="post">
                     <a  class="d-inline-block text-primary text-uppercase " href="{{route('employee.edit',$employee)}}">Edit Profile</a>
-                        <h1>{{$employee['name']}}</h1>
+                        <h1>EMPLOYEE INFOMATION</h1>
                     </form>
                     </div>
                     <div>
@@ -27,7 +27,22 @@
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                     
-                                     
+                                            <div class="row">
+                                            <div class="col-md-6">
+                                                <label>First Name:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$employee['fname']}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Last Name:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$employee['lname']}}</p>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Age</label>
@@ -41,7 +56,7 @@
                                                 <label>Island</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$employee['island']}}</p>
+                                                <p>{{$employee['island_name']}}</p>
                                             </div>
                                         </div>
                                  

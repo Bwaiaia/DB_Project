@@ -38,9 +38,21 @@
                                                 <div class="row">
                                                
                                                    <div class="form-group col-md-6">
-                                                      <label for="name"><span class="text-danger">*</span> FULL NAME</label>
+                                                      <label for="fname"><span class="text-danger">*</span> First NAME</label>
                                                    
-                                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"  value="{{$employee['name']}}" id="name" placeholder="Enter a Full name" name="name" autocomplete="off">
+                                                            <input type="text" class="form-control {{ $errors->has('fname') ? ' is-invalid' : '' }}"  value="{{$employee['fname']}}" id="fname" placeholder="Enter a First name" name="fname" autocomplete="off">
+                                                           @if(session()->has('error'))
+                                                            <div class="alert alert-danger">
+                                                               {{ session()->get('error') }}
+                                                            </div>
+                                                         @endif
+                                                   
+                                                   </div>
+
+                                                   <div class="form-group col-md-6">
+                                                      <label for="lname"><span class="text-danger">*</span> Last NAME</label>
+                                                   
+                                                            <input type="text" class="form-control {{ $errors->has('lname') ? ' is-invalid' : '' }}"  value="{{$employee['lname']}}" id="lname" placeholder="Enter a Last name" name="lname" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -50,8 +62,8 @@
                                                    </div>
                                                    <div class="form-group col-md-6">
                                                       <label for="age"><span class="text-danger">*</span> Age</label>
-                                                     
-                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{$employee['age']}}" id="age" placeholder="Enter age" name="age" autocomplete="off">
+                                                                                                                                                                               <!--manga edit aio-->  
+                                                            <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{$employee['age']}}" {{$employee['id'] == $employee['id'] ? }} id="age" placeholder= {{$employee['age']}} name="age" autocomplete="off">
                                                             @if ($errors->has('receive_date'))
                                                                <span class="invalid-feedback" role="alert">
                                                                <strong>{{ $errors->first('age') }}</strong>
@@ -67,9 +79,13 @@
                                                 <div class="row">
                                                
                                                    <div class="form-group col-md-6">
-                                                      <label for="island"><span class="text-danger">*</span> Island Name</label>
-                                                   
-                                                            <input type="text" class="form-control {{ $errors->has('island') ? ' is-invalid' : '' }}" value="{{$employee['island']}}" id="island" placeholder="Enter a Emergency Contact" name="island" autocomplete="off">
+                                                   <label for="island_id">{{ __('ISLAND') }} <span class="text-danger">*</span></label>
+                                                   <select name="island_id" id="island_id" class="form-control">
+                                                        <option value="" selected disabled>{{ __('Select one') }}</option>
+                                                        @foreach($island as $island)
+                                                         <option value="{{ $island['id'] }}" {{  $island['id'] == $employee['island_id'] ? 'selected' : '' }}>{{ $island['island_name'] }}</option>
+                                                        @endforeach
+                                                    </select>
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}

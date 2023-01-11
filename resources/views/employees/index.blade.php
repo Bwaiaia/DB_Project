@@ -64,7 +64,8 @@
                             <th>{{ __(' SL#') }}</th>
                             <th>{{ __(' ID') }}</th>
                           
-                            <th>{{ __(' Full Name') }}</th>
+                            <th>{{ __(' First Name') }}</th>
+                            <th>{{ __(' Last Name') }}</th>
                             <th>{{ __(' Age') }}</th>
                             <th>{{ __(' Island') }}</th>
                             <th>{{ __(' Created At') }}</th>
@@ -79,9 +80,10 @@
                             <td>{{ $sl++ }}</td>
                             <td>{{ $employee['employee_id'] }}</td>
                             
-                            <td>{{ $employee['name'] }}</td>
+                            <td>{{ $employee['fname'] }}</td>
+                            <td>{{ $employee['lname'] }}</td>
                             <td>{{ $employee['age'] }}</td>
-                            <td>{{ $employee['island'] }}</td>
+                            <td>{{ $employee['island_id'] }}</td>
                         
                             <td class="text-center">{{ date("d F Y", strtotime($employee['created_at'])) }}</td>
                            

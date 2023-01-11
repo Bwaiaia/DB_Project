@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Designation;
 use App\Models\Employee;
+use App\Models\Island;
 use App\Models\Department;
 use DB;
 use Illuminate\Http\Request;
@@ -19,8 +20,9 @@ class EmployeeController extends Controller {
 	 */
 	public function index() {
 
+		
+		
 		$employees = Employee::all();
-			
 		return view('employees.index', compact('employees'));
 	}
 
@@ -33,7 +35,9 @@ class EmployeeController extends Controller {
      */
     public function create()
     {
-        return view('employees.create');
+		$islands = Island::all();
+
+        return view('employees.create', ['islands'=> $islands]);
     }
 
 	/**
@@ -44,12 +48,30 @@ class EmployeeController extends Controller {
 	 */
 	public function store(Request $request) {
 		
-		            $input = $request->all();
-	
-					$results = Employee::create($input);
+		            
+		DB::beginTransaction();
+        try {
+            $employees = new Employee();
+			$employees->island_id = $request->island_id;
+            $employees->fname = $request->fname;
+			$employees->lname = $request->lname;
+			$employees->age = $request->age;
+            $employees->save();
 
-			
-				return redirect()->route('employee.index')->with('exception', 'Operation failed !');
+            DB::commit();
+        } 
+		
+		catch (\Exception $e) 
+		{
+            DB::rollback();
+            return 'something went wrong';
+        }
+
+		
+
+		//$input = $request->all();
+		//$results = Employee::create($input);
+		return redirect()->route('employees.index')->with('exception', 'Operation failed !');
 	}
 
 	

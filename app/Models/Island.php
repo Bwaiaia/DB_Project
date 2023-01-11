@@ -22,4 +22,11 @@ class Island extends Model
     {
         return $this->hasMany(Village::class);
     }
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
+    }
+
+    
 }
