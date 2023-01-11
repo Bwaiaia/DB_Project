@@ -47,7 +47,7 @@
                                                    <div class="form-group col-md-6">
                                                       <label for="lname"><span class="text-danger">*</span> Last Name:</label>
                                                    
-                                                            <input type="text" class="form-control {{ $errors->has('lname') ? ' is-invalid' : '' }}" value="{{ old('lname') }}" id="lname" placeholder="Enter a your last name" name="fname" autocomplete="off">
+                                                            <input type="text" class="form-control {{ $errors->has('lname') ? ' is-invalid' : '' }}" value="{{ old('lname') }}" id="lname" placeholder="Enter a your last name" name="lname" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}

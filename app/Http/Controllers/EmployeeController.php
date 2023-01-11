@@ -48,7 +48,8 @@ class EmployeeController extends Controller {
 	 */
 	public function store(Request $request) {
 		
-		            
+		// $employee = $request->all();
+		//            dd($employee); 
 		DB::beginTransaction();
         try {
             $employees = new Employee();
@@ -71,7 +72,7 @@ class EmployeeController extends Controller {
 
 		//$input = $request->all();
 		//$results = Employee::create($input);
-		return redirect()->route('employees.index')->with('exception', 'Operation failed !');
+		return redirect()->route('employee.index')->with('exception', 'Operation failed !');
 	}
 
 	
