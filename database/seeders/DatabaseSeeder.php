@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(IslandSeeder::class);
         $this->call(TrainingTypeSeeder::class);
-        // $this->call(VillageSeeder::class);
+        $this->call(VillageSeeder::class);
     }
 }

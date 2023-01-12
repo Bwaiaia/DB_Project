@@ -10,7 +10,7 @@
                 <div class="card-body">
                 <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
-              
+              {{--{{dd($details->participant_first_name)}}--}}
 
                     <!-- Main content -->
                     <section class="content">
@@ -26,8 +26,9 @@
                             </div>
                             <div class="box-body">
                             <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('training.update',$training['id']) }}" >
-                                                @method('PUT')                   
-                                                @csrf
+                                                                    @csrf
+                                 <input type="hidden" name="_method" value="PATCH">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">  
                                        
                                           <div class="box-body">
                                           <h4 class="box-title text-info"> SECTION A</h4>
@@ -68,7 +69,8 @@
                                                    <div class="form-group col-md-6">
                                                       <label for="training_date"><span class="text-danger">*</span>TRAINING DATE</label>
                                                    
-                                                            <input type="date" class="form-control {{ $errors->has('training_date') ? ' is-invalid' : '' }}" value="{{ old('training_date') }}" id="training_date"  name="training_date" autocomplete="off">
+                                                          
+                                                            <input type="date" class="form-control datepicker pull-right{{ $errors->has('training_date') ? ' is-invalid' : '' }}"  value="{{$training['training_date']}}" id="training_date"  name="training_date" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -85,7 +87,7 @@
                                              
                                                    <div class="form-group col-md-2">
                                                    <label for="participant_first_name"><span class="text-danger">*</span> FIRST NAME</label>
-                                                   <input type="text" class="form-control {{ $errors->has('participant_first_name') ? ' is-invalid' : '' }}" value="{{ old('participant_first_name') }}" id="participant_first_name" placeholder="Enter a first name" name="participant_first_name" autocomplete="off">
+                                                   <input type="text" class="form-control {{ $errors->has('participant_first_name') ? ' is-invalid' : '' }}" value="{{$details->participant_first_name}}" id="participant_first_name" placeholder="Enter a first name" name="participant_first_name" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -95,7 +97,7 @@
                                                    </div>
                                                    <div class="form-group col-md-2">
                                                    <label for="participant_last_name"><span class="text-danger">*</span> LAST NAME</label>
-                                                   <input type="text" class="form-control {{ $errors->has('participant_last_name') ? ' is-invalid' : '' }}" value="{{ old('participant_last_name') }}" id="participant_last_name" placeholder="Enter a last name" name="participant_last_name" autocomplete="off">
+                                                   <input type="text" class="form-control {{ $errors->has('participant_last_name') ? ' is-invalid' : '' }}" value="{{$details->participant_last_name }}" id="participant_last_name" placeholder="Enter a last name" name="participant_last_name" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -108,7 +110,9 @@
                                                    <select name="village_id" id="island_id" class="form-control">
                                                         <option value="" selected disabled>{{ __('Select one') }}</option>
                                                         @foreach($villages as $village)
-                                                        <option value="{{ $village['id'] }}">{{ $village['village_name'] }}</option>
+
+                                                        <option value="{{ $village['id'] }}" {{  $village['id'] == $details->village_id ? 'selected' : '' }}>{{ $village['village_name'] }}</option>
+                                                       
                                                         @endforeach
                                                     </select>
                                                            @if(session()->has('error'))
@@ -121,7 +125,7 @@
                                                    <div class="form-group col-md-2">
                                                    <label for="age">{{ __('AGE') }} <span class="text-danger">*</span></label>
                                                         <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }} has-feedback">
-                                                        <input type="text" class="form-control datepicker pull-right{{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{ old('age') }}" id="age" placeholder="Enter age" name="age" autocomplete="off">
+                                                        <input type="text" class="form-control datepicker pull-right{{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{$details->age}}" id="age" placeholder="Enter age" name="age" autocomplete="off">
                                                             @if ($errors->has('age'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('age') }}</strong>
@@ -135,8 +139,9 @@
                                                    <label for="gender"><span class="text-danger">*</span> Gender</label>
                                                    <select name="gender" id="gender" class="form-control">
                                                         <option value="" selected disabled>{{ __('Select one') }}</option>
-                                                        <option value="1">{{ __('Male') }}</option>
-                                                        <option value="0">{{ __('Female') }}</option>
+                                                       
+                                                      <option value="1" {{$details->gender == 1 ? 'selected' : '' }}>{{ __('Male') }}</option>
+                                                      <option value="0" {{$details->gender == 0 ? 'selected' : '' }}>{{ __('Female') }}</option>
                                                        
                                                     </select>
                                                            @if(session()->has('error'))
@@ -151,18 +156,15 @@
                                                    
                                                
 
-                                           <!-- /.box-body -->
+                                          <!-- /.box-body -->
                                           <div class="box-footer text-right">
-                                                                                                          <!-- manga okirikoo ahah --> 
-                                                <button type="submit" class="btn btn-primary btn-outline" href="">
+                                                <button type="submit" class="btn btn-primary btn-outline">
                                                    <i class="ti-save-alt"></i> Update
                                                 </button>
                                                 <a class="btn btn-warning btn-outline mr-1" href="">
                                                    <i class="ti-trash"></i> Cancel
                                                 </a>
                                           </div>
-
-                                          @method('PUT')
                                           <!-- /.box-footer -->
                                        </form>
                                        </div>

@@ -122,7 +122,21 @@ class TrainingController extends Controller
         $islands = Island::all()->toArray();
         $types =   TrainingType::all()->toArray();
         $villages =   Village::all()->toArray();
-		return view('trainings.edit')->withTraining($training)->withIslands($islands)->withTypes($types)->withVillages($villages);
+        $detail = DB::table("trainings")
+        ->leftJoin("training_details", function($join){
+            $join->on("trainings.id", "=", "training_details.training_id");
+        })
+        ->select("trainings.id", "trainings.training_date","training_details.participant_first_name", "training_details.participant_last_name", "training_details.age", "training_details.gender", "training_details.village_id")
+        ->where("trainings.id", "=", $id)
+        ->first();
+        // dd($training);
+
+		return view('trainings.edit')
+        ->withTraining($training)
+        ->withIslands($islands)
+        ->withTypes($types)
+        ->withVillages($villages)
+        ->withDetails($detail);
     }
 
     /**
@@ -134,9 +148,31 @@ class TrainingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //$training = $request->all();
-        $data = Training::find($id)->update($request->all());
-        //$data = Training::find($id)->update($training);
+        DB::beginTransaction();
+        try {
+           
+
+     $trainingdetail = TrainingDetail::find($id)->update([
+            'village_id'=>$request->village_id,
+            'participant_first_name'=>$request->participant_first_name,
+            'participant_last_name'=>$request->participant_last_name,
+            'training_id'=>$id,
+            'age'=>$request->age,
+            'gender'=>$request->gender,
+        ]);
+
+        $training = Training::find($id)->update([
+            'island_id' => $request->island_id,
+            'training_type_id' => $request->training_type_id,
+            'training_date' => $request->training_date,
+        ]);
+
+        DB::commit();
+    } catch (\Exception $e) {
+        DB::rollback();
+        return 'something went wrong may be you forgot to enter the date';
+    }
+
         return redirect()->route('training.index')->with('message', 'Updated successfully.');
     }
 
