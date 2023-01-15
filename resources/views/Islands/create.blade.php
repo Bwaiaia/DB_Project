@@ -37,11 +37,9 @@
                                                       <label for="island_name"><span class="text-danger">*</span>Island Name</label>
                                                    
                                                             <input type="text" class="form-control {{ $errors->has('island_name') ? ' is-invalid' : '' }}" value="{{ old('island_name') }}" id="name" placeholder="Enter a Island Name:" name="island_name" autocomplete="off">
-                                                           @if(session()->has('error'))
-                                                            <div class="alert alert-danger">
-                                                               {{ session()->get('error') }}
-                                                            </div>
-                                                         @endif
+                                                            @if($errors->any())
+                                                                  {!! implode('', $errors->all('<div>:message</div>')) !!}
+                                                            @endif
                                                    
                                                    </div>
                                                   
