@@ -6,6 +6,8 @@ use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Models\Island;
 //use App\Models\Village;
+use App\Http\Requests\IslandStoreRequest;
+use App\Http\Requests\IslandUpdateRequest;
 
 class IslandController extends Controller
 {
