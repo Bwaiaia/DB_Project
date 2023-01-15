@@ -28,5 +28,7 @@ class Island extends Model
         return $this->hasMany(Employee::class);
     }
 
-    
+    public static $rules = [
+        'name' => ['required','string','unique:islands'],
+    ];
 }
