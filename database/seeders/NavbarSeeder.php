@@ -46,6 +46,12 @@ class NavbarSeeder extends Seeder
                 'route' => 'employee.index',
                 'ordering' => 5,
             ]
+,
+            [
+                'name' => 'Report',
+                'route' => 'report.index',
+                'ordering' => 6,
+            ]
         ];
   
         foreach ($links as $key => $navbar) {
