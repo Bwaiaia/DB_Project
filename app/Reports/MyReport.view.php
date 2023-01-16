@@ -6,9 +6,14 @@ use \koolreport\widgets\koolphp\Table;
     <title>My Report</title>
     </head>
     <body>
-        <h1>It works</h1>
+        <h1>Training Attendance Records </h1>
         <?php
-        Table::create([
+        Table::create(
+            [
+                "paging"=>array(
+                    "pageSize"=>15,
+                    "pageIndex"=>0,
+                ),
             "dataSource"=>$this->dataStore("")
         ]);
         ?>
