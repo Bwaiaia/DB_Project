@@ -161,7 +161,7 @@ return [
     | needs to guess the correct type based on the extension alone.
     |
     */
-    //ikai-error ngke tera raoi???
+    //ikai-error ngke tera raoi???//
     'extension_detector' => [
         'xlsx'     => Excel::XLSX,
         'xlsm'     => Excel::XLSX,
