@@ -1,13 +1,3 @@
-
-Attachment errror.png added.None selected
-
-Skip to content
-Using Gmail with screen readers
-Conversations
-2.36 GB of 15 GB used
-Terms · Privacy · Programme Policies
-Last account activity: 34 minutes ago
-Details
 <?php
 
 use Maatwebsite\Excel\Excel;
@@ -171,7 +161,6 @@ return [
     | needs to guess the correct type based on the extension alone.
     |
     */
-    //ikai-error ngke tera raoi???//
     'extension_detector' => [
         'xlsx'     => Excel::XLSX,
         'xlsm'     => Excel::XLSX,
@@ -342,5 +331,3 @@ return [
         'force_resync_remote' => null,
     ],
 ];
-excel.php
-Displaying excel.php. 
