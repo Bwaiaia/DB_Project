@@ -105,21 +105,23 @@ Route::group(['middleware' => 'auth'], function ()
         });
     });
 
-     //reports
-     Route::group(['as' => 'report.', 'prefix' => 'report'], function () {
-        Route::get('', [ReportController::class, 'index'])->name('index');
-        Route::get('koolexcel', [ReportController::class, 'export'])->name('koolexcel');
-        Route::get('excel', [ReportController::class, 'exportTrainingAttendance'])->name('excel');
-        Route::get('create', [ReportController::class, 'create'])->name('create');
-        Route::post('', [ReportController::class, 'store'])->name('store');
-        Route::get('export', [ReportController::class, 'exportlist'])->name('export');
-        Route::group(['prefix' => '{report}'], function () { 
-        Route::get('', [ReportController::class, 'show'])->name('show');
-        Route::get('edit', [ReportController::class, 'edit'])->name('edit');
-        Route::match(['PUT', 'PATCH'], '', [ReportController::class, 'update'])->name('update');
-        Route::delete('', [ReportController::class, 'delete'])->name('delete');
+         //reports
+         Route::group(['as' => 'report.', 'prefix' => 'report'], function () {
+            Route::get('repo', [ReportController::class, 'index'])->name('index');
+            Route::get('', [ReportController::class, '_repo'])->name('repo');
+            Route::get('/training', [ReportController::class, 'generatePDF'])->name('pdf');
+            Route::get('koolexcel', [ReportController::class, 'export'])->name('koolexcel');
+            Route::get('excel', [ReportController::class, 'exportTrainingAttendance'])->name('excel');
+            Route::get('create', [ReportController::class, 'create'])->name('create');
+            Route::post('', [ReportController::class, 'store'])->name('store');
+            Route::get('export', [ReportController::class, 'exportlist'])->name('export');
+            Route::group(['prefix' => '{report}'], function () { 
+            Route::get('', [ReportController::class, 'show'])->name('show');
+            Route::get('edit', [ReportController::class, 'edit'])->name('edit');
+            Route::match(['PUT', 'PATCH'], '', [ReportController::class, 'update'])->name('update');
+            Route::delete('', [ReportController::class, 'delete'])->name('delete');
+            });
         });
-    });
 
    
 

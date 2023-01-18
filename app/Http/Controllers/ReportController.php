@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Reports\MyReport;
 use \koolreport\excel\ExcelExportable;
-// use \koolreport\laravel\Friendship;
+use App\Models\Url;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ExportTrainingAttendance;
 use App\Exports\ExportTrainingAttendanceTable;
+use PDF;
+use DB;
 
 class ReportController extends Controller
 {
@@ -23,6 +25,14 @@ class ReportController extends Controller
         $report->run();
         // dd($report->render());
         return view("reports.trainings.training_attendance")->withReport($report);
+    }
+
+    public function _repo()
+    {
+                $urls = Url::select('name','url')->get();
+        // dd($route);
+
+        return view("reports._repo")->withUrls($urls);
     }
 
     /**
@@ -42,6 +52,23 @@ class ReportController extends Controller
     }
     public function export() 
     {
-        return Excel::download(new ExportTrainingAttendanceTable, '_training_attendance.blade.xlsx');
+        return Excel::download(new ExportTrainingAttendanceTable, '_table.xlsx');
+    }
+
+    public function generatePDF()
+    {
+        $trainings = DB::table('islands')
+        ->select('trainings.id', 'islands.island_name', 'villages.village_name', 'trainings.training_date', 'training_details.participant_first_name', 'training_details.participant_last_name', 'training_details.age', 'training_details.gender', 'training_types.training_name')
+        ->leftJoin('trainings','islands.id','=','trainings.island_id')
+        ->leftJoin('training_types','trainings.training_type_id','=','training_types.id')
+        ->leftJoin('training_details','trainings.id','=','training_details.training_id')
+        ->leftJoin('villages','training_details.village_id','=','villages.id')
+        ->whereNotNull('trainings.training_type_id')
+        ->whereNotNull('training_details.village_id')
+        ->get();
+
+      $pdf = PDF::loadView('reports.trainings._table', ['trainings' => $trainings ])->setPaper('a4', 'landscape');
+    
+        return $pdf->download('training_attendance.pdf');
     }
 }
